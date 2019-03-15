@@ -12,14 +12,14 @@ describe('Our first test', () => {
 });
 
 describe('index.html', () => {
-  it('should say hello', () => {
+  it('should say Users', () => {
     const index = fs.readFileSync("./src/index.html", "utf-8");
     jsdom.env(index, (error, window) => {
       if (error) {
         return false;
       }
       const h1 = window.document.getElementsByTagName("h1")[0];
-      expect(h1.innerHTML).to.equal("Hello Vishesh");
+      expect(h1.innerHTML).to.equal("Users");
       window.close();
     });
   });
